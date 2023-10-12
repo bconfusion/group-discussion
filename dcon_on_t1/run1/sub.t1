@@ -1,0 +1,13 @@
+#!/bin/bash
+###==== iService account ID
+#PBS -P GOV109092
+###==== Queue name. Check by 'qstat -q'
+#PBS -q serial
+#PBS -l select=1:ncpus=1:mpiprocs=1
+#PBS -N dcon
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+
+DCON_EXE=/home/kagra/fusion/dcon_3.80/dcon/dcon
+${DCON_EXE} ./dcon.in
